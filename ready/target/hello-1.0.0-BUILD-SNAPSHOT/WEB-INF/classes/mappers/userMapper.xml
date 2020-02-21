@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper 
+	namespace="com.ready.psb.service.userMapper">
+	
+	<select id="selectList" resultType="userVO">
+	SELECT *
+	FROM 
+	USERINFO
+	
+	</select>
+	
+	<insert id="userInsert" parameterType="userVO">
+	INSERT INTO
+	USERINFO
+	VALUES
+	(SEQ.NEXTVAL,#{USER_NAME},#{USER_EMAIL},#{USER_TEL})
+	</insert>
+	
+	<select id="userView" resultType="userVO" parameterType="int">
+	
+	SELECT *
+	FROM
+	USERINFO
+	WHERE USER_ID = #{USER_ID}
+	</select>
+	
+	<update id="userUpdate" parameterType="userVO">
+	UPDATE USERINFO
+	SET
+	USER_NAME = #{USER_NAME}, 
+	USER_EMAIL = #{USER_EMAIL},
+	USER_TEL = #{USER_TEL}
+	WHERE USER_ID = #{USER_ID}
+	</update>
+	
+	</mapper>

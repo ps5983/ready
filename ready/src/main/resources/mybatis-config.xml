@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  mybatis 홈페이지==> 시작하기에 있는 config파일  복사 -->
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+  <configuration>
+  
+  	<settings>
+	<setting name="mapUnderscoreToCamelCase" value="false"/><!-- 데이터베이스 전통적인 _를쓰는 언더스코어를 tb_ad -> tbAb로쓰의는 자바 필드의 카멜케이스로 자동변환 -->
+	<setting name="jdbcTypeForNull" value="NULL"/>
+	<setting name="callSettersOnNulls" value="true"/><!-- 맵을쓸때 디펄트값을 안잡아서 문제가됨 그래서 써줌  -->
+	</settings>
+  
+  
+  	<typeAliases>
+		<typeAlias type="com.ready.psb.service.userVO" alias="userVO" />
+	</typeAliases><!-- 타이핑을줄이기위해 -->
+  
+  
+  
+  </configuration>
